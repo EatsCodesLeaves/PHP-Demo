@@ -1,8 +1,26 @@
 body{
 	margin: 0 auto;
-	background-image: url("../image/technology.jpg");
+	/* background-image: url("https://wallpapercave.com/wp/sHxKBnX.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 720px; */
+}
+body::after {
+	content: "";
+	background: url("https://wallpapercave.com/wp/sHxKBnX.jpg");
 	background-repeat: no-repeat;
 	background-size: 100% 720px;
+	opacity: 0.8;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;   
+}
+
+img {
+	background: rgba(197, 208, 218, 1.0);
+	border-radius: 10%;
 }
 
 .container{
@@ -10,7 +28,7 @@ body{
 	height: 450px;
 	text-align: center;
 	margin: 0 auto;
-	background-color: rgba(44, 62, 80,0.7);
+	background-color: rgba(44, 62, 80,0.95);
 	margin-top: 160px;
 }
 
@@ -20,8 +38,8 @@ body{
 	margin-top: -60px;
 }
 
-input[type="text"],input[type="password"]{
-	margin-top: 30px;
+input[type="text"], input[type="password"]{
+	margin-top: 10px;
 	height: 45px;
 	width: 300px;
 	font-size: 18px;
@@ -30,18 +48,25 @@ input[type="text"],input[type="password"]{
 	padding-left: 40px;
 }
 
-.form-input::before{
-	content: "\f007";
-	font-family: "FontAwesome";
-	padding-left: 07px;
-	padding-top: 40px;
-	position: absolute;
-	font-size: 35px;
-	color: #2980b9; 
+a {
+	padding: 5px 15px;
+	background-color: rgba(208, 217, 226, 0.95);
+	border: black;
+	color: black;
 }
 
-.form-input:nth-child(2)::before{
-	content: "\f023";
+a:visited {
+	padding: 5px 15px;
+	background-color: rgba(208, 217, 226, 0.95);
+	color: black;
+	border: black;
+}
+
+a:hover {
+	padding: 5px 15px;
+	background-color: rgba(208, 217, 226, 0.95);
+	color: grey;
+	border: black;
 }
 
 .btn-login{
@@ -49,4 +74,22 @@ input[type="text"],input[type="password"]{
 	border: none;
 	background-color: #27ae60;
 	color: #fff;
+	margin-bottom: 4%;
+}
+
+.btn-insert{
+	padding: 15px 25px;
+	border: none;
+	background-color: #27ae60;
+	color: #fff;
+	margin-bottom: 4%;
+}
+
+.btn-delete {
+	padding: 15px 25px;
+	border: none;
+	background-color: #27ae60;
+	color: #fff;
+	margin-top: 20%;
+	margin-bottom: 4%;
 }

@@ -1,0 +1,20 @@
+body{
+	margin: 0 auto;
+	/* background-image: url("https://th.bing.com/th/id/R.1eb9e403daec7b373bfccfd7f7d3076a?rik=xCDiQl6GE3KHeA&pid=ImgRaw&r=0");
+	background-repeat: no-repeat;
+	background-size: 100% 720px; */
+}
+
+body::after {
+	content: "";
+	background: url("https://th.bing.com/th/id/R.1eb9e403daec7b373bfccfd7f7d3076a?rik=xCDiQl6GE3KHeA&pid=ImgRaw&r=0");
+	background-repeat: no-repeat;
+	background-size: 100% 720px;
+	opacity: 0.7;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;   
+}

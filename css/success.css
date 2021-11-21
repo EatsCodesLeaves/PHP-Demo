@@ -1,0 +1,20 @@
+body{
+	margin: 15% auto;
+	/* background-image: url("https://clipartix.com/wp-content/uploads/2017/01/Celebration-celebrate-images-clip-art.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 720px; */
+}
+
+body::after {
+	content: "";
+	background: url("https://clipartix.com/wp-content/uploads/2017/01/Celebration-celebrate-images-clip-art.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 720px;
+	opacity: 0.5;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;   
+}
