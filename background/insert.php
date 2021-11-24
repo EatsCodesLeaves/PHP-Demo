@@ -4,26 +4,6 @@
     $db = new Database();
     $conn = $db->connect();
 
-    $db->createUser($_POST['username'], $_POST['password']);
-    // if(isset($_POST['username'])){
-        
-    //     $username=$_POST['username'];
-    //     $password=$_POST['password'];
-        
-    //     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-        
-    //     $insertQuery = "INSERT INTO `loginform` (User, Password) VALUES ('$username', '$passwordHash')";
+    $db->createUser($_POST['username'], $_POST['password']);    // if user submitted username/password form, insert a new user with 'username' and 'password'
 
-    //     $result = mysqli_query($conn, $insertQuery, MYSQLI_STORE_RESULT);
-
-    //     if ($result){
-    //         header('Location: demo.php');
-    //         exit();
-    //     }
-    //     else {
-    //         header('Location: failure.php?create=fail');
-    //         exit();
-    //     }
-
-    // }
 ?>

@@ -6,13 +6,13 @@
         private $db="";
         private $conn;
 
-        public function connect () {
+        public function connect () { // connect to a database given the root user's username and password + host name and database name
             $this->conn = mysqli_connect($this->host, $this->rootUser, $this->rootPass);
             mysqli_select_db($this->conn, $this->db);
             return $this->conn;
         }
 
-        public function loginUser ($username, $password) {
+        public function loginUser ($username, $password) { // tries to find an entry/row in the database corresponding to '$username' and '$password' and jumps to successful login page if successful, else jumps to failure page
             if(isset($username)){
         
                 $sql="SELECT * FROM `loginform` WHERE User='$username' LIMIT 1";
@@ -31,14 +31,14 @@
             }
         }
 
-        public function logoutUser () {
-            if (isset($_COOKIE['username'])) {  //remove cookie after signing out -> returning to login screen
+        public function logoutUser () {   // removes the global cookie holding on to the currently logged in user's username
+            if (isset($_COOKIE['username'])) {
                 unset($_COOKIE['username']); 
                 setcookie('username', null, -1, '/'); 
             }
         }
 
-        public function createUser ($username, $password) {
+        public function createUser ($username, $password) { //  tries to create an entry/row in the database corresponding to a new user in the database using '$username' and '$password' and jumps to successful login page if successful, else jumps to failure page
             if(isset($username)){
                 
                 $passwordHash = password_hash($password, PASSWORD_DEFAULT);
@@ -59,7 +59,7 @@
             }
         }
 
-        public function deleteUser ($username) {
+        public function deleteUser ($username) { //  tries to delete the entry/row in the database corresponding to the user with the username '$username' and returns to login page if successful, else jumps to failure page
             if(isset($username)){
                 $sql="DELETE FROM `loginform` WHERE User='$username'";
                 
@@ -74,7 +74,7 @@
             }
         }
 
-        public function renameUser ($username, $password, $newUsername) {
+        public function renameUser ($username, $password, $newUsername) { //   tries to find an entry/row in the database corresponding to  '$username'/'$password', then changes the User to '$newUsername' and jumps to successful login page if successful, else jumps to failure page
             if(isset($username)){
         
                 $sql="SELECT * FROM `loginform` WHERE User='$username' LIMIT 1";
@@ -94,7 +94,7 @@
             }
         }
 
-        public function changePassword ($username, $password, $newPassword) {
+        public function changePassword ($username, $password, $newPassword) { //   tries to find an entry/row in the database corresponding to  '$username'/'$password', then changes the Password to '$newPassword' and jumps to successful login page if successful, else jumps to failure page
             if(isset($username)){
                 $newPasswordHash = password_hash($newPassword, PASSWORD_DEFAULT);
                 

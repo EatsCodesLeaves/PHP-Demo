@@ -4,29 +4,6 @@
     $db = new Database();
     $conn = $db->connect();
 
-    $db->renameUser($_POST['username'], $_POST['password'], $_POST['new-username']);
+    $db->renameUser($_POST['username'], $_POST['password'], $_POST['new-username']); // if user submitted username/password/new-username form, try to change the user's username to the new username
 
-    // if(isset($_POST['username'])){
-        
-    //     $username=$_POST['username'];
-    //     $password=$_POST['password'];
-    //     $newUsername=$_POST['new-username'];
-        
-    //     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-
-    //     $sql="SELECT * FROM `loginform` WHERE User='$username' LIMIT 1";
-        
-    //     $result = mysqli_query($conn, $sql, MYSQLI_STORE_RESULT);
-        
-    //     $result = mysqli_fetch_array($result);
-
-    //     if (password_verify($password, $result["Password"])) {
-    //         $sql = "UPDATE loginform SET User='$newUsername' WHERE User='$username' LIMIT 1";
-    //         $result = mysqli_query($conn, $sql, MYSQLI_STORE_RESULT);
-    //         header('Location: success.php?change=success');
-    //     } else {
-    //         header('Location: failure.php?change=fail');
-    //     }
-
-    // }
 ?>
